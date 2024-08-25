@@ -9,12 +9,12 @@ CONF_LINES = "lines"
 CONF_PRODUCTS = "products"
 CONF_TIMEOFFSET = "timeoffset"
 CONF_NUMBER = "number"
-CONF_PRODUCTS = {
-    "U-Bahn" : "Untergrundbahn", 
-    "Tram" : "Straßenbahn", 
-    "Bus": "Busverkehr", 
-    "ExpressBus" : "Express Bus", 
-    "S-Bahn" : "Stadtbahn", 
-    "Nachteule" : "Bus Nachtlinie",
-}
+CONF_PRODUCTS = [
+    "U-Bahn",
+    "Tram",
+    "Bus",
+    "ExpressBus",
+    "S-Bahn",
+    "Nachteule"
+]
 ATTR_DATA = "data"
