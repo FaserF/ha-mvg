@@ -6,11 +6,11 @@
         "description": "Geben Sie die Details Ihrer Haltestelle für die Suchabfragen ein.",
         "data": {
           "station": "Start-Haltestelle",
-          "destination": "Endziel-Haltestellen",
+          "destinations": "Endziel-Haltestellen",
           "timeoffset": "Versatz in Minuten",
           "lines": "Eine oder mehrere Liniennummern",
           "products": "Maximale Verbindungen im Sensor",
-          "number": "Zu ignorierende Produkte"
+          "number": "Anzahl der abzurufenden Verbindungen"
         }
       }
     }
@@ -22,11 +22,11 @@
         "description": "Geben Sie die Details Ihrer Haltestelle für die Suchabfragen ein.",
         "data": {
           "station": "Start-Haltestelle",
-          "destination": "Endziel-Haltestellen",
+          "destinations": "Endziel-Haltestellen",
           "timeoffset": "Versatz in Minuten",
           "lines": "Eine oder mehrere Liniennummern",
           "products": "Maximale Verbindungen im Sensor",
-          "number": "Zu ignorierende Produkte"
+          "number": "Anzahl der abzurufenden Verbindungen"
         }
       }
     },

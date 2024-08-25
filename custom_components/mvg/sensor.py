@@ -54,18 +54,15 @@ def setup_platform(
 ) -> None:
     """Set up the MVGLive sensor."""
     sensors = []
-    for nextdeparture in config[CONF_NEXT_DEPARTURE]:
-        sensors.append(
-            MVGSensor(
-                nextdeparture.get(CONF_STATION),
-                nextdeparture.get(CONF_DESTINATIONS),
-                nextdeparture.get(CONF_LINES),
-                nextdeparture.get(CONF_PRODUCTS),
-                nextdeparture.get(CONF_TIMEOFFSET),
-                nextdeparture.get(CONF_NUMBER),
-                nextdeparture.get(CONF_NAME),
-            )
-        )
+    MVGSensor(
+        nextdeparture.get(CONF_STATION),
+        nextdeparture.get(CONF_DESTINATIONS),
+        nextdeparture.get(CONF_LINES),
+        nextdeparture.get(CONF_PRODUCTS),
+        nextdeparture.get(CONF_TIMEOFFSET),
+        nextdeparture.get(CONF_NUMBER),
+        nextdeparture.get(CONF_NAME),
+    )
     add_entities(sensors, True)
 
 class MVGSensor(SensorEntity):

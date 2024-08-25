@@ -2,11 +2,11 @@ import logging
 from typing import Any
 
 import voluptuous as vol
+import homeassistant.helpers.config_validation as cv
 
 from homeassistant import config_entries
 from homeassistant.core import callback
 from homeassistant.data_entry_flow import FlowResult
-import homeassistant.helpers.config_validation as cv
 
 from .const import (  # pylint: disable=unused-import
     CONF_STATION,
@@ -44,12 +44,12 @@ class OptionsFlowHandler(config_entries.OptionsFlow):
         _LOGGER.debug("Showing init form")
         return self.async_show_form(
             step_id="init",
-            data_schema = vol.Schema(
+            data_schema=vol.Schema(
                 {
                     vol.Required(CONF_STATION): str,
                     vol.Optional(CONF_DESTINATIONS, default=""): str,
                     vol.Optional(CONF_LINES, default=""): str,
-                    vol.Optional(CONF_PRODUCTS, default=[]): cv.multi_select(CONF_PRODUCTS),
+                    vol.Optional(CONF_PRODUCTS, default=CONF_PRODUCTS): cv.multi_select(CONF_PRODUCTS),
                     vol.Optional(CONF_TIMEOFFSET, default=0): int,
                     vol.Optional(CONF_NUMBER, default=5): int,
                 }
@@ -96,7 +96,7 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                     vol.Required(CONF_STATION): str,
                     vol.Optional(CONF_DESTINATIONS, default=""): str,
                     vol.Optional(CONF_LINES, default=""): str,
-                    vol.Optional(CONF_PRODUCTS, default=[]): cv.multi_select(CONF_PRODUCTS),
+                    vol.Optional(CONF_PRODUCTS, default=CONF_PRODUCTS): cv.multi_select(CONF_PRODUCTS),
                     vol.Optional(CONF_TIMEOFFSET, default=0): int,
                     vol.Optional(CONF_NUMBER, default=5): int,
                 }

@@ -6,11 +6,11 @@
         "description": "Submit your train station details for the search queries.",
         "data": {
           "station": "Start station",
-          "destination": "Final Destination stations",
+          "destinations": "Final Destination stations",
           "timeoffset": "Offset in minutes",
           "lines": "One or more line numbers",
           "products": "Max connections in sensor",
-          "number": "Products to ignore"
+          "number": "Number of connections to retrieve"
         }
       }
     }
@@ -22,11 +22,11 @@
         "description": "Submit your train station details for the search queries.",
         "data": {
           "station": "Start station",
-          "destination": "Final Destination stations",
+          "destinations": "Final Destination stations",
           "timeoffset": "Offset in minutes",
           "lines": "One or more line numbers",
           "products": "Max connections in sensor",
-          "number": "Products to ignore"
+          "number": "Number of connections to retrieve"
         }
       }
     },
