@@ -19,19 +19,20 @@ from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
 
 _LOGGER = logging.getLogger(__name__)
 
-CONF_NEXT_DEPARTURE = "nextdeparture"
-CONF_STATION = "station"
-CONF_DESTINATIONS = "destinations"
-CONF_LINES = "lines"
-CONF_PRODUCTS = "products"
-CONF_TIMEOFFSET = "timeoffset"
-CONF_NUMBER = "number"
+from .const import (  # pylint: disable=unused-import
+    CONF_NEXT_DEPARTURE,
+    CONF_STATION,
+    CONF_DESTINATIONS,
+    CONF_LINES,
+    CONF_PRODUCTS ,
+    CONF_TIMEOFFSET,
+    CONF_NUMBER,
+    CONF_PRODUCTS,
+    ATTRIBUTION,
+    DOMAIN,
+)
 
 NONE_ICON = "mdi:clock"
-
-DEFAULT_PRODUCT = ["U-Bahn", "Tram", "Bus", "ExpressBus", "S-Bahn", "Nachteule"]
-
-ATTRIBUTION = "Data provided by mvg.de"
 
 SCAN_INTERVAL = timedelta(seconds=30)
 

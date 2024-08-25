@@ -1,0 +1,41 @@
+{
+  "options": {
+    "flow_title": "Einrichtung MVG: {entity_name}",
+    "step": {
+      "init": {
+        "description": "Geben Sie die Details Ihrer Haltestelle für die Suchabfragen ein.",
+        "data": {
+          "station": "Start-Haltestelle",
+          "destination": "Endziel-Haltestellen",
+          "timeoffset": "Versatz in Minuten",
+          "lines": "Eine oder mehrere Liniennummern",
+          "products": "Maximale Verbindungen im Sensor",
+          "number": "Zu ignorierende Produkte"
+        }
+      }
+    }
+  },
+  "config": {
+    "flow_title": "Einrichtung MVG",
+    "step": {
+      "user": {
+        "description": "Geben Sie die Details Ihrer Haltestelle für die Suchabfragen ein.",
+        "data": {
+          "station": "Start-Haltestelle",
+          "destination": "Endziel-Haltestellen",
+          "timeoffset": "Versatz in Minuten",
+          "lines": "Eine oder mehrere Liniennummern",
+          "products": "Maximale Verbindungen im Sensor",
+          "number": "Zu ignorierende Produkte"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Diese Haltestelle ist bereits konfiguriert"
+    },
+    "error": {
+      "invalid_station": "Ungültige Haltestelle",
+      "unknown": "Unbekannter Fehler"
+    }
+  }
+}
