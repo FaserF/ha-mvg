@@ -3,8 +3,10 @@
   "version": "2.0.0",
   "name": "MVG",
   "codeowners": [],
-  "documentation": "https://www.home-assistant.io/integrations/mvg",
+  "config_flow": true,
+  "documentation": "https://github.com/danielpotthast/mvg",
   "iot_class": "cloud_polling",
   "loggers": ["MVG"],
   "requirements": ["mvg==1.1.2"]
 }
+ 
