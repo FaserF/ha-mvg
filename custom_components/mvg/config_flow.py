@@ -49,7 +49,7 @@ class OptionsFlowHandler(config_entries.OptionsFlow):
                     vol.Required(CONF_STATION): str,
                     vol.Optional(CONF_DESTINATIONS, default=""): str,
                     vol.Optional(CONF_LINES, default=""): str,
-                    vol.Optional(CONF_PRODUCTS, default=CONF_PRODUCTS): cv.multi_select(CONF_PRODUCTS),
+                    vol.Optional(CONF_PRODUCTS, default=list(CONF_PRODUCTS)): cv.multi_select(CONF_PRODUCTS),
                     vol.Optional(CONF_TIMEOFFSET, default=0): int,
                     vol.Optional(CONF_NUMBER, default=5): int,
                 }
@@ -96,7 +96,7 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                     vol.Required(CONF_STATION): str,
                     vol.Optional(CONF_DESTINATIONS, default=""): str,
                     vol.Optional(CONF_LINES, default=""): str,
-                    vol.Optional(CONF_PRODUCTS, default=CONF_PRODUCTS): cv.multi_select(CONF_PRODUCTS),
+                    vol.Optional(CONF_PRODUCTS, default=list(CONF_PRODUCTS)): cv.multi_select(CONF_PRODUCTS),
                     vol.Optional(CONF_TIMEOFFSET, default=0): int,
                     vol.Optional(CONF_NUMBER, default=5): int,
                 }
