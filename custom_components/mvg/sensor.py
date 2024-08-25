@@ -8,6 +8,8 @@ import logging
 from mvg import MvgApi, TransportType
 import voluptuous as vol
 
+from homeassistant.config_entries import ConfigEntry
+from homeassistant.helpers.update_coordinator import CoordinatorEntity
 from homeassistant.components.sensor import PLATFORM_SCHEMA, SensorEntity
 from homeassistant.const import CONF_NAME, UnitOfTime
 from homeassistant.core import HomeAssistant
@@ -33,22 +35,15 @@ ATTRIBUTION = "Data provided by mvg.de"
 
 SCAN_INTERVAL = timedelta(seconds=30)
 
-PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
-    {
-        vol.Required(CONF_NEXT_DEPARTURE): [
-            {
-                vol.Required(CONF_STATION): cv.string,
-                vol.Optional(CONF_DESTINATIONS, default=[""]): cv.ensure_list_csv,
-                vol.Optional(CONF_LINES, default=[""]): cv.ensure_list_csv,
-                vol.Optional(CONF_PRODUCTS, default=None): cv.ensure_list_csv,
-                vol.Optional(CONF_TIMEOFFSET, default=0): cv.positive_int,
-                vol.Optional(CONF_NUMBER, default=5): cv.positive_int,
-                vol.Optional(CONF_NAME): cv.string,
-            }
-        ]
-    }
-)
-
+async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_entities):
+    station = entry.data.get("station")
+    destinations = entry.data.get("destinations").split(",")
+    lines = entry.data.get("lines").split(",")
+    products = entry.data.get("products").split(",")
+    timeoffset = entry.data.get("timeoffset")
+    number = entry.data.get("number")
+    
+    async_add_entities([MVGSensor(station, destinations, lines, products, timeoffset, number, station)], True)
 
 def setup_platform(
     hass: HomeAssistant,
